@@ -1,0 +1,259 @@
+$color_nhsuk-dark-blue    : #003087;
+$color_nhsuk-bright-blue  : #0072ce;
+$color_nhsuk-light-blue   : #41b6e6;
+$color_nhsuk-mid-grey     : #768692;
+$color_nhsuk-light-grey   : #e8edee;
+$color_nhsuk-dark-grey    : #425563;
+$color_nhsuk-pink         : #ae2573;
+$color_nhsuk-light-purple : #704c9c;
+$color_nhsuk-light-green  : #78be20;
+$color_nhsuk-dark-green   : #006747;
+$color_nhsuk-aqua-green   : #00A499;
+$color_nhsuk-light-yellow : #FAE100;
+$color_gds_black          : #0b0c0c;
+$color_nhsuk-olive        : #927c39;
+
+.nhsuk-u-color__blue {
+    color: $color_nhsuk-blue;
+    fill: $color_nhsuk-blue;
+}
+.nhsuk-u-color__bright-blue {
+    color: $color_nhsuk-bright-blue;
+    fill: $color_nhsuk-bright-blue;
+}
+.nhsuk-u-color__light-blue {
+    color: $color_nhsuk-light-blue;
+    fill: $color_nhsuk-light-blue;
+}
+.nhsuk-u-color__dark-blue {
+    color: $color_nhsuk-dark-blue;
+    fill: $color_nhsuk-dark-blue;
+}
+.nhsuk-u-color__dark-blue {
+    color: $color_nhsuk-dark-blue;
+    fill: $color_nhsuk-dark-blue;
+}
+.nhsuk-u-color__mid-grey {
+    color: $color_nhsuk-mid-grey;
+    fill: $color_nhsuk-mid-grey;
+}
+.nhsuk-u-color__light-grey {
+    color: $color_nhsuk-light-grey;
+    fill: $color_nhsuk-light-grey;
+}
+.nhsuk-u-color__dark-grey {
+    color: $color_nhsuk-dark-grey;
+    fill: $color_nhsuk-dark-grey;
+}
+.nhsuk-u-color__pink {
+    color: $color_nhsuk-pink;
+    fill: $color_nhsuk-pink;
+}
+.nhsuk-u-color__dark-pink {
+    color: $color_nhsuk-dark-pink;
+    fill: $color_nhsuk-dark-pink;
+}
+.nhsuk-u-color__purple {
+    color: $color_nhsuk-light-purple;
+    fill: $color_nhsuk-light-purple;
+}
+.nhsuk-u-color__dark-purple {
+    color: $color_nhsuk-purple;
+    fill: $color_nhsuk-purple;
+}
+.nhsuk-u-color__green {
+    color: $color_nhsuk-green;
+    fill: $color_nhsuk-green;
+}
+.nhsuk-u-color__light-green {
+    color: $color_nhsuk-light-green;
+    fill: $color_nhsuk-light-green;
+}
+.nhsuk-u-color__dark-green {
+    color: $color_nhsuk-dark-green;
+    fill: $color_nhsuk-dark-green;
+}
+.nhsuk-u-color__aqua-green {
+    color: $color_nhsuk-aqua-green;
+    fill: $color_nhsuk-aqua-green;
+}
+.nhsuk-u-color__light-yellow {
+    color: $color_nhsuk-light-yellow;
+    fill: $color_nhsuk-light-yellow;
+}
+.nhsuk-u-color__pale-yellow{
+    color: $color_nhsuk-light-yellow;
+    fill: $color_nhsuk-light-yellow;
+}
+.nhsuk-u-color__orange{
+    color: $color_nhsuk-orange;;
+    fill: $color_nhsuk-orange;;
+}
+.nhsuk-u-color__olive {
+    color: $color_nhsuk-olive;
+    fill: $color_nhsuk-olive;
+}
+
+.nhsuk-care-card {
+    &.nhsuk-care-card--blue {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-blue;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-blue;
+        }
+    }
+
+    &.nhsuk-care-card--dark-blue {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-dark-blue;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-dark-blue;
+        }
+    }
+
+    &.nhsuk-care-card--pink {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-pink;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-pink;
+        }
+    }
+
+    &.nhsuk-care-card--dark-pink {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-dark-pink;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-dark-pink;
+        }
+    }
+
+    &.nhsuk-care-card--aqua-green {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-aqua-green;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-aqua-green;
+        }
+    }
+
+    &.nhsuk-care-card--light-green {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-light-green;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-light-green;
+        }
+    }
+
+    &.nhsuk-care-card--green {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-green;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-green;
+        }
+    }
+
+    &.nhsuk-care-card--dark-green {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-dark-green;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-dark-green;
+        }
+    }
+
+    &.nhsuk-care-card--orange {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-orange;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-orange;
+        }
+    }
+
+    &.nhsuk-care-card--purple {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-light-purple;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-light-purple;
+        }
+    }
+
+    &.nhsuk-care-card--dark-purple {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-purple;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-purple;
+        }
+    }
+
+    &.nhsuk-care-card--light-yellow {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-light-yellow;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-light-yellow;
+        }
+    }
+
+    &.nhsuk-care-card--light-grey {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-light-grey;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-light-grey;
+        }
+    }
+
+    &.nhsuk-care-card--mid-grey {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-mid-grey;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-mid-grey;
+        }
+    }
+
+    &.nhsuk-care-card--dark-grey {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-dark-grey;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-dark-grey;
+        }
+    }
+
+    &.nhsuk-care-card--pale-yellow {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-pale-yellow;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-pale-yellow;
+        }
+    }
+
+    &.nhsuk-care-card--warm-yellow {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-warm-yellow;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-warm-yellow;
+        }
+    }
+
+    &.nhsuk-care-card--olive {
+        .nhsuk-care-card__heading-container {
+            background-color: $color_nhsuk-olive;
+        }
+        .nhsuk-care-card__arrow:before, .nhsuk-care-card__arrow:after {
+            border-color: $color_nhsuk-olive;
+        }
+    }
+}

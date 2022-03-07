@@ -1,0 +1,23 @@
+/* ==========================================================================
+   #PAGINATION EXTRAS
+   ========================================================================== */
+.nhsuk-pagination__pagelist {
+    text-align: center;
+
+    .nhsuk-pagination-item {
+        color: black;
+        text-align: center;
+        display: inline-block;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+
+    .nhsuk-pagination-item.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .nhsuk-pagination-item:hover:not(.active) {
+        background-color: #ddd;
+    }
+}

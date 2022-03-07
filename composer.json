@@ -1,0 +1,34 @@
+{
+    "name": "nhsleadership/nhsl-laravel",
+    "description": "NHSL theme for Laravel based upon NHSUK frontend framework",
+    "homepage": "https://github.com/NHSLeadership/nhsl-laravel",
+    "version": "dev-main",
+    "license": "GPL-2.0+",
+    "autoload": {
+        "psr-4": {
+            "Nhsl\\NhslLaravel\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marcin Calka",
+            "email": "marcin.calka@nhsx.uk"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nhsl\\NhslLaravel\\NhslLaravelServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "composer-plugin-api": "^2.2.0",
+        "laravel/framework": "7.6.*"
+    },
+    "support": {
+        "source": "https://github.com/NHSLeadership/nhsl-laravel",
+        "issues": "https://github.com/NHSLeadership/nhsl-laravel/issues"
+    }
+}

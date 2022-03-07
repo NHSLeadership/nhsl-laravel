@@ -1,0 +1,11 @@
+.env*
+.gitattributes
+.styleci.yml
+.DS_Store
+/.idea
+/.vagrant
+/public/storage
+/src/vendor
+/src/app/storage
+/src/node_modules
+/vendor
