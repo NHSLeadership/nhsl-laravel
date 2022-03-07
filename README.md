@@ -1,5 +1,7 @@
 # Laravel NHSL template package
-v1.0.0 
+### v1.0.0 
+
+This is a template package for Laravel based projects that integrates NHSUK frontend framework with Laravel package and extends the available component library, making it ready to be used with Blade and Livewire templates.  
 
 ## Installation
 To install and use Laravel NHSL package - add the following to composer
