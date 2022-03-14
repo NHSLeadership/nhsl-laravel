@@ -2,13 +2,15 @@
 
 return [
 
+	'prefix' => 'nhsl',
+
+	'middleware' => ['web'],
+
+	'alert_banner_on' => false,
+
 	'components' => [
 		'default' => 'components',
 	],
-
-//	'elements'   => [
-//		'default' => 'elements',
-//	],
 
 	'footer'     => [
 		'default' => 'elements.footer',
@@ -27,13 +29,12 @@ return [
 		'default' => 'elements.nav',
 	],
 
+	/*
+	|--------------------------------------------------------------------------
+	| Global options, eg: date and date time display formats
+	|--------------------------------------------------------------------------
+	*/
 	'options'    => [
-		/*
-		|--------------------------------------------------------------------------
-		| Global date and date time display formats
-		|--------------------------------------------------------------------------
-		*/
-
 		'global_date_format' => 'd/m/Y',
 		'global_date_short_format' => 'd M Y',
 		'global_datetime_format' => 'd/m/Y H:i',

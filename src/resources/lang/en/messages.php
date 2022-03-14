@@ -13,5 +13,9 @@ return [
     |
     */
 
-	'congratulations' => 'Congratulations.'
+	'congratulations' => 'Congratulations.',
+	'banner' => [
+		'message' => 'This is an example site wide banner with the additional link to '.
+	                 '<a href=":url" target="_blank">external content</a>.',
+	],
 ];

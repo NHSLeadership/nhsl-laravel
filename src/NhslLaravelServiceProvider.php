@@ -3,69 +3,93 @@
 namespace Nhsl\NhslLaravel;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class NhslLaravelServiceProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     *
-     * @throws \Illuminate\Contracts\Container\BindingResolutionException
-     */
-    public function register()
-    {
-        //$this->app->make('Nhsl\LaravelNhsl\Controllers\Controller');
-    }
+	/**
+	 * Register services.
+	 *
+	 * @throws \Illuminate\Contracts\Container\BindingResolutionException
+	 */
+	public function register()
+	{
+		$this->app->make('Nhsl\NhslLaravel\App\Http\Controllers\NhslLaravelController');
+	}
 
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        // Blade::component('package-alert', Alert::class);
+	/**
+	 * Bootstrap services.
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
+		/**
+		 * Publish config
+		 */
+		$this->publishes([
+			__DIR__.'/config/nhsl.php' => config_path('nhsl.php'),
+		], 'nhsl-config');
 
-	    /**
-	     * Publish config
-	     */
-        $this->publishes([
-            __DIR__.'/config/nhsl.php' => config_path('nhsl.php'),
-        ], 'nhsl-config');
+		/**
+		 * Publish routes
+		 */
+		$routeParams = [
+			'prefix'     => config('nhsl.prefix'),
+			'middleware' => config('middleware'),
+		];
+		Route::group($routeParams, function () {
+			$this->loadRoutesFrom(__DIR__.'/routes/web.php');
+		});
 
-	    /**
-	     * Publish routes
-	     */
-        $this->loadRoutesFrom(__DIR__.'/routes/routes.php');
+		/**
+		 * Publish controller
+		 */
+		$this->publishes([
+			__DIR__.'/app/Http/NhslLaravelController' => app_path('Http/Controllers/NhslLaravelController.php'),
+		]);
 
-	    /**
-	     * Publish assets public path
-	     */
-	    $this->publishes([
-		    __DIR__.'/public' => public_path('nhsl')
-	    ], 'nhsl-public');
+		/**
+		 * Publish public assets
+		 */
+		$this->publishes([
+			__DIR__.'/public' => public_path('/')
+		], 'nhsl-public');
 
-	    /**
-	     * Load and publish views
-	     */
-	    $this->loadViewsFrom(__DIR__.'/resources/views', 'nhsl');
-	    $this->publishes([
-		    __DIR__.'/resources/views' => resource_path('views/nhsl')
-	    ], 'nhsl-views');
+		/**
+		 * Load and publish sass
+		 */
+		$this->publishes([
+			__DIR__.'/resources/sass' => resource_path('sass')
+		], 'nhsl-sass');
 
-	    /**
-	     * Load and publish styles
-	     */
-	    $this->loadViewsFrom(__DIR__.'/resources/sass', 'nhsl');
-	    $this->publishes([
-		    __DIR__.'/resources/sass' => resource_path('sass/nhsl')
-	    ], 'nhsl-styles');
+		/**
+		 * Load and publish js
+		 */
+		$this->publishes([
+			__DIR__.'/resources/js' => resource_path('js')
+		], 'nhsl-js');
 
-	    /**
-	     * Load and publish translations
-	     */
-	    $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'vendor/laravel-nhsl');
-	    $this->publishes([
-	        __DIR__.'/resources/lang' => $this->app->langPath('lang/laravel-nhsl')
-	    ], 'nhsl-translations');
-    }
+		/**
+		 * Load and publish views
+		 */
+		$this->loadViewsFrom(__DIR__.'/resources/views', 'nhsl');
+		$this->publishes([
+			__DIR__.'/resources/views' => resource_path('views')
+		], 'nhsl-views');
+
+		if ($this->app->runningInConsole()) {
+			$this->publishes([
+				__DIR__.'/resources/views' => resource_path('views'),
+			], 'nhsl-views');
+		}
+
+		/**
+		 * Load and publish translations
+		 */
+		$this->loadTranslationsFrom(__DIR__.'/resources/lang', 'nhsl');
+		$this->publishes([
+			__DIR__.'/resources/lang' => $this->app->langPath('lang/en/nhsl')
+		], 'nhsl-translations');
+	}
 }

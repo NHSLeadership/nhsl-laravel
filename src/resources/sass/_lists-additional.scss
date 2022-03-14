@@ -1,0 +1,20 @@
+/* ==========================================================================
+   STYLES / #LISTS
+   ========================================================================== */
+
+%nhsuk-list[type="a"],
+%nhsuk-list--lower-alpha {
+  list-style-type: lower-alpha;
+}
+%nhsuk-list[type="A"],
+%nhsuk-list--upper-alpha {
+    list-style-type: upper-alpha;
+}
+%nhsuk-list[type="i"],
+%nhsuk-list--lower-latin {
+    list-style-type: lower-latin;
+}
+%nhsuk-list[type="I"],
+%nhsuk-list--upper-latin {
+    list-style-type: upper-latin;
+}

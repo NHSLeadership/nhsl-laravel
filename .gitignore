@@ -4,6 +4,7 @@
 .DS_Store
 /.idea
 /.vagrant
+/node_modules
 /public/storage
 /src/vendor
 /src/app/storage
