@@ -4,78 +4,59 @@
 NHS Laravel Starter Kit integrates NHSUK frontend framework with Laravel package and extends the available component library, making it ready to be used with Blade and Livewire templates.  
 
 ## Installation
-To install and use NHS Laravel Starter Kit - add the following to composer
-```
-"require-dev": {
-    "nhsleadership/nhsl-laravel": "^1.0"
-}
-```
-
-> There is no officially published version of NHS Laravel Kit at the moment, so you will not be able to use composer discovery yet:
-> 
-> ~~composer install nhsleadership/nhsl-laravel~~
-
-But no worries, instead you will need to explicitly alias the official GIT repository in your Laravel project composer:
+There is no officially published version of NHS Laravel Kit for v1.0.0 RC, so you will not be able to use composer discovery yet.
+In order to install and use NHS Laravel Starter Kit please add the following git path to your project composer file.
 ```
 "repositories": [
     {
         "type": "git",
         "url": "https://github.com/NHSLeadership/nhsl-laravel.git",
     }
-],
-"config": {
-    "allow-plugins": {
-        "nhsleadership/nhsl-laravel": true
-    }
-}
+]
+```
+And then install normally with 
+```
+composer require nhsleadership/nhsl-laravel
 ```
 
-For the extensive NHS Laravel Kit development, you will need fork and pull down the repository locally 
-```
-git clone https://github.com/NHSLeadership/nhsl-laravel.git ../nhsl-laravel
-```
-... and alias the local path in your Laravel project composer:
-```
-"repositories": [
-    {
-        "type": "path",
-        "url": "../nhsl-laravel"
-    }
-],
-"config": {
-    "allow-plugins": {
-        "nhsleadership/nhsl-laravel": true
-    }
-}
-```
-If you are a developer in some cases you need to use dev-main or dev-master version instead to get the latest code in development 
-```
-"require-dev": {
-    "nhsleadership/nhsl-laravel": "dev-master"
-},
-```
-    
-Next you need to install the dependencies with composer install or update respectively 
- 
-```
-composer install or composer update
-```
+> DEV NOTE: For the extensive NHS Laravel Kit development, you will need fork and pull down the repository locally: 
+> ```
+> git clone https://github.com/NHSLeadership/nhsl-laravel.git ../nhsl-laravel
+> ```
+> ... and alias the local path in your Laravel project composer:
+> ```
+> "repositories": [
+>     {
+>         "type": "path",
+>         "url": "../nhsl-laravel"
+>     }
+> ],
+> "config": {
+>     "allow-plugins": {
+>         "nhsleadership/nhsl-laravel": true
+>     }
+> }
+> ```
+> In some cases you may need to use your local branch dev-main or dev-master instead to make it work: 
+> ```
+> "require-dev": {
+>     "nhsleadership/nhsl-laravel": "dev-master"
+> },
+> ```
    
-#### Further integration
+#### Integration with Laravel
 
-Add NhslLaravelServiceProvider to Laravel app.php
+To get it all working with Laravel you need to add the integration in the provider configuration: 
+To integrate and publish all components (those listed with nhsl- prefix) simply run:
 ```
-'providers' => [
-    ... 
-    Nhsl\LaravelNhsl\NhslLaravelServiceProvider::class,
-],
+php artisan vendor:publish
 ```
+and choose `Nhsl\LaravelNhsl\NhslLaravelServiceProvider`. 
+At this stage all controllers, resources and assets should be published for you and available to extend in the respective directories.
 
-#### Publishing starter kit files locally
-1. Publishing selective nhsl components (all will be listed with nhsl- prefix)
-    ```
-    php artisan vendor:publish
-    ```
+And that's really it! Enjoy...
+
+#### Re-publishing individual starter kit files locally
    
 1. Re-publishing latest nhsl-public content with override (mvp assets)
     ```
