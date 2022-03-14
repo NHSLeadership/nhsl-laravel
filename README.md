@@ -23,15 +23,18 @@ But no worries, instead you will need to explicitly alias the official GIT repos
         "url": "https://github.com/NHSLeadership/nhsl-laravel.git",
     }
 ],
+"config": {
+    "allow-plugins": {
+        "nhsleadership/nhsl-laravel": true
+    }
+}
 ```
 
 For the extensive NHS Laravel Kit development, you will need fork and pull down the repository locally 
 ```
 git clone https://github.com/NHSLeadership/nhsl-laravel.git ../nhsl-laravel
 ```
-
 ... and alias the local path in your Laravel project composer:
-
 ```
 "repositories": [
     {
@@ -39,6 +42,17 @@ git clone https://github.com/NHSLeadership/nhsl-laravel.git ../nhsl-laravel
         "url": "../nhsl-laravel"
     }
 ],
+"config": {
+    "allow-plugins": {
+        "nhsleadership/nhsl-laravel": true
+    }
+}
+```
+If you are a developer in some cases you need to use dev-main or dev-master version instead to get the latest code in development 
+```
+"require-dev": {
+    "nhsleadership/nhsl-laravel": "dev-master"
+},
 ```
     
 Next you need to install the dependencies with composer install or update respectively 
@@ -57,7 +71,7 @@ Add NhslLaravelServiceProvider to Laravel app.php
 ],
 ```
 
-#### Publishing starter kit files locally for customisation
+#### Publishing starter kit files locally
 1. Publishing selective nhsl components (all will be listed with nhsl- prefix)
     ```
     php artisan vendor:publish
@@ -78,12 +92,12 @@ Add NhslLaravelServiceProvider to Laravel app.php
     php artisan vendor:publish --tag=nhsl-views --force
     ```
 
-1. Re-publish latest nhsl-styles content with override
+1. Re-publish latest nhsl-styles content with override (optional)
     ```
     php artisan vendor:publish --tag=nhsl-styles --force
     ```
    
-1. Re-publish latest nhsl-translations content with override
+1. Re-publish latest nhsl-translations content with override (optional)
     ```
     php artisan vendor:publish --tag=nhsl-translations --force
     ```

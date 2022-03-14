@@ -25,7 +25,7 @@
     "minimum-stability": "dev",
     "require": {
         "composer-plugin-api": "^2.2.0",
-        "laravel/framework": "7.6.*"
+        "laravel/framework": ">=7.6"
     },
     "support": {
         "source": "https://github.com/NHSLeadership/nhsl-laravel",
