@@ -1,18 +1,37 @@
-# Laravel NHSL template package
-v1.0.0 
+# NHS Laravel Starter Kit
+### v1.0.0 
+
+NHS Laravel Starter Kit integrates NHSUK frontend framework with Laravel package and extends the available component library, making it ready to be used with Blade and Livewire templates.  
 
 ## Installation
-To install and use Laravel NHSL package - add the following to composer
+To install and use NHS Laravel Starter Kit - add the following to composer
 ```
 "require-dev": {
     "nhsleadership/nhsl-laravel": "^1.0"
 }
 ```
-> Officially published versions will be available to install as follows:
-> 
-> ```composer install nhsleadership/nhsl-laravel```
 
-For development, you will also need to fork and pull down the repository locally and alias the local path to laravel composer:
+> There is no officially published version of NHS Laravel Kit at the moment, so you will not be able to use composer discovery yet:
+> 
+> ~~composer install nhsleadership/nhsl-laravel~~
+
+But no worries, instead you will need to explicitly alias the official GIT repository in your Laravel project composer:
+```
+"repositories": [
+    {
+        "type": "git",
+        "url": "https://github.com/NHSLeadership/nhsl-laravel.git",
+    }
+],
+```
+
+For the extensive NHS Laravel Kit development, you will need fork and pull down the repository locally 
+```
+git clone https://github.com/NHSLeadership/nhsl-laravel.git ../nhsl-laravel
+```
+
+... and alias the local path in your Laravel project composer:
+
 ```
 "repositories": [
     {
@@ -22,12 +41,15 @@ For development, you will also need to fork and pull down the repository locally
 ],
 ```
     
-#### Next you need to install the dependencies with 
+Next you need to install the dependencies with composer install or update respectively 
+ 
 ```
-composer install
+composer install or composer update
 ```
    
-#### Add NhslLaravelServiceProvider to Laravel app.php
+#### Further integration
+
+Add NhslLaravelServiceProvider to Laravel app.php
 ```
 'providers' => [
     ... 
@@ -35,35 +57,35 @@ composer install
 ],
 ```
 
-#### Publishing files for further development 
-1. Publishing nhsl-config
-
+#### Publishing starter kit files locally for customisation
+1. Publishing selective nhsl components (all will be listed with nhsl- prefix)
+    ```
+    php artisan vendor:publish
+    ```
+   
+1. Re-publishing latest nhsl-config with override
     ```
     php artisan vendor:publish --tag=nhsl-config --force
     ```
    
-2. Publishing nhsl-assets
+1. Re-publishing latest nhsl-public content with override
     ```
-    php artisan vendor:publish --tag=nhsl-assets --force
+    php artisan vendor:publish --tag=nhsl-public --force
     ```
    
-3. Publishing nhsl-views
+1. Re-publishing latest nhsl-views content with override
     ```
     php artisan vendor:publish --tag=nhsl-views --force
     ```
 
-
-4. Publish nhsl-styles
+1. Re-publish latest nhsl-styles content with override
     ```
     php artisan vendor:publish --tag=nhsl-styles --force
     ```
    
-5. Publish nhsl-translations
+1. Re-publish latest nhsl-translations content with override
     ```
     php artisan vendor:publish --tag=nhsl-translations --force
     ```
       
-6. Publish all
-    ```
-    php artisan vendor:publish --force
-    ```
+
