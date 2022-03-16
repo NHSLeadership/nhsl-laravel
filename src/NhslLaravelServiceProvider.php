@@ -35,8 +35,8 @@ class NhslLaravelServiceProvider extends ServiceProvider
 		 * Publish routes
 		 */
 		$routeParams = [
-			'prefix'     => config('nhsl.prefix'),
-			'middleware' => config('middleware'),
+			'prefix'     => config('nhsl.prefix', 'nhsl'),
+			'middleware' => config('middleware', ['web']),
 		];
 		Route::group($routeParams, function () {
 			$this->loadRoutesFrom(__DIR__.'/routes/web.php');

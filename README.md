@@ -77,21 +77,21 @@ Add NhslLaravelServiceProvider to Laravel app.php
     php artisan vendor:publish
     ```
    
-1. Re-publishing latest nhsl-config with override
-    ```
-    php artisan vendor:publish --tag=nhsl-config --force
-    ```
-   
-1. Re-publishing latest nhsl-public content with override
+1. Re-publishing latest nhsl-public content with override (mvp assets)
     ```
     php artisan vendor:publish --tag=nhsl-public --force
     ```
    
-1. Re-publishing latest nhsl-views content with override
+1. Re-publishing latest nhsl-views content with override (optional)
     ```
     php artisan vendor:publish --tag=nhsl-views --force
     ```
 
+1. Re-publishing latest nhsl-config with override (optional)
+    ```
+    php artisan vendor:publish --tag=nhsl-config --force
+    ```
+      
 1. Re-publish latest nhsl-styles content with override (optional)
     ```
     php artisan vendor:publish --tag=nhsl-styles --force

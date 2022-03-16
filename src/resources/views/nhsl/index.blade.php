@@ -1,4 +1,4 @@
-@extends('nhsl.layouts.nhsl')
+@extends('nhsl::nhsl.layouts.nhsl')
 
 @section('title', $title ?? '')
 
@@ -14,14 +14,14 @@
             <p>NHS Laravel Starter Kit does not restrict the usage of standard NHS.UK frontend library components but extends the functionality of the original framework onto Blade templating making it easy for development. All available examples here will render to the same standards as per NHS service manual.</p>
 
             <h3>Banner</h3>
-            @include('nhsl.elements.banner', [
+            @include('nhsl::nhsl.elements.banner', [
                 'title' => 'This is a banner title',
                 'message' => sprintf('<p>Banners can be used in the page <b>header</b> as well as main content and contain custom <span class="nhsuk-tag--green">HTML</span> <span class="nhsuk-tag--pink">elements</span>, <s>text formatting</s> and <a href="%s">URLs</a>.</p>', '#'),
             ])
             <hr>
 
             <h3>Progress indicator</h3>
-            @include('nhsl.elements.form.progress-indicator', [
+            @include('nhsl::nhsl.elements.form.progress-indicator', [
 	            'step' => 1,
 	            'setup' => [
 	            	'steps' => [
@@ -43,7 +43,7 @@
 
             <form class="nhsuk-form-group">
                 <h3>Form input</h3>
-                @include('nhsl.components.form.input', [
+                @include('nhsl::nhsl.components.form.input', [
                     'name' => 'input1',
                     'placeholder' => 'Enter value here',
                     'label' => 'Text label',
@@ -54,7 +54,7 @@
 
             <form class="nhsuk-form-group">
                 <h3>Form textarea</h3>
-                @include('nhsl.components.form.textarea', [
+                @include('nhsl::nhsl.components.form.textarea', [
                     'name' => 'text1',
                     'placeholder' => 'Enter value here',
                     'label' => 'Input label',
@@ -65,7 +65,7 @@
 
             <form class="nhsuk-form-group">
                 <h3>Form checkboxes</h3>
-                @include('nhsl.components.form.checkbox', [
+                @include('nhsl::nhsl.components.form.checkbox', [
                     'name' => 'checkbox1',
                     'options_list' => [
                         'Option 1',
@@ -80,7 +80,7 @@
 
             <form class="nhsuk-form-group">
                 <h3>Form dropdown</h3>
-                @include('nhsl.components.form.dropdown', [
+                @include('nhsl::nhsl.components.form.dropdown', [
                     'name' => 'dropdown1',
                     'label' => 'Dropdown label',
                     'dropdown_list' => [
@@ -95,7 +95,7 @@
 
             <form class="nhsuk-form-group">
                 <h3>Form radio group</h3>
-                @include('nhsl.components.form.radio', [
+                @include('nhsl::nhsl.components.form.radio', [
                     'name' => 'radio1',
                     'label' => 'Radio group label',
                     'options_list' => [
@@ -109,25 +109,25 @@
             </form>
 
             <h3>Back link</h3>
-            @include('nhsl.elements.form.back-link', [])
+            @include('nhsl::nhsl.elements.form.back-link', [])
             <hr>
 
             <h3>Action links (NHS colours supported)</h3>
-            @include('nhsl.components.action-link', [
+            @include('nhsl::nhsl.components.action-link', [
 	            'action_url' => '#',
 	            'action_colour' => 'blue',
 	            'action_text' => 'Call to action 1',
 	            'action_text_hidden' => 'Hidden action text',
             ])
 
-            @include('nhsl.components.action-link', [
+            @include('nhsl::nhsl.components.action-link', [
 	            'action_url' => '#',
 	            'action_colour' => 'green',
 	            'action_text' => 'Call to action 2',
 	            'action_text_hidden' => 'Hidden action text',
             ])
 
-            @include('nhsl.components.action-link', [
+            @include('nhsl::nhsl.components.action-link', [
 	            'action_url' => '#',
 	            'action_colour' => 'black',
 	            'action_text' => 'Call to action 3',
@@ -145,7 +145,7 @@
             }
             @endphp
 
-            @include('nhsl.components.card', [
+            @include('nhsl::nhsl.components.card', [
 	            'card' => [
 	            	'heading' => 'Card heading should not be longer than 80 characters for readability',
                     'description' => 'Card description is not limited by design and can be longer text when needed. Additionally we can add call to action or document links below.',
@@ -158,8 +158,6 @@
             @foreach([401, 403, 404, 419, 429, 500, 503] as $errorCode)
                 <p><a class="nhsuk-action-link" href="{{ route('nhsl.errors', $errorCode) }}">HTTP {{$errorCode}} page.</a></p>
             @endforeach
-
-            @yield('content')
 
         </div>
     </div>
