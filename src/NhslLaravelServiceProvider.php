@@ -43,10 +43,10 @@ class NhslLaravelServiceProvider extends ServiceProvider
 		});
 
 		/**
-		 * Publish controller
+		 * Publish controllers
 		 */
 		$this->publishes([
-			__DIR__.'/app/Http/NhslLaravelController' => app_path('Http/Controllers/NhslLaravelController.php'),
+			__DIR__.'/app/Http/Controllers' => app_path('Http/Controllers'),
 		]);
 
 		/**

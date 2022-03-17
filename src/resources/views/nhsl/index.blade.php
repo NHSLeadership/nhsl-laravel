@@ -13,6 +13,20 @@
             <p>NHS Laravel Starter Kit is a Laravel framework package for developers based on the <a href="https://service-manual.nhs.uk/design-system/components">NHS Digital service manual components</a> framework.</p>
             <p>NHS Laravel Starter Kit does not restrict the usage of standard NHS.UK frontend library components but extends the functionality of the original framework onto Blade templating making it easy for development. All available examples here will render to the same standards as per NHS service manual.</p>
 
+            <h3>Sample blade file</h3>
+            <div class="design-example">
+                <div class="code-snippet">
+                    <div class="app-tabs__container js-tabs__container">
+                        <div class="code-snippet__preformatted">
+                            <div class="app-code-snippet__container">
+                                @include('nhsl::nhsl.samples.blade-sample')
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
             <h3>Banner</h3>
             @include('nhsl::nhsl.elements.banner', [
                 'title' => 'This is a banner title',
