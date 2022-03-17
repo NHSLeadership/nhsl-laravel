@@ -12,6 +12,6 @@
         Please visit our <a href="{{ Route::has('contact-us') ? route('contact-us') : '/contact' }}">contact us</a> page to find help and support information.
     </p>
 
-    @include('nhsl.elements.form.back-link')
+    @include('nhsl::nhsl.elements.form.back-link')
 
 @endsection

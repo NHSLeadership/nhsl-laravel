@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-@include('nhsl.elements.head')
+@include('nhsl::nhsl.elements.head')
 
 <body class="js-enabled">
 
-    @include('nhsl.elements.header')
+    @include('nhsl::nhsl.elements.header')
 
     @if(Config::get('nhsl.alert_banner_on', true) && (Route::is('home') || Route::is('register') || Route::is('nhsl')))
-        @include('nhsl.elements.banner')
+        @include('nhsl::nhsl.elements.banner')
     @endif
 
     <div class="nhsuk-width-container">
@@ -17,7 +17,7 @@
         </main>
     </div>
 
-    @include('nhsl.elements.footer')
+    @include('nhsl::nhsl.elements.footer')
 
     <script src="{{ asset('js/nhsl.min.js', !\Illuminate\Support\Facades\App::environment('local')) }}" defer></script>
 

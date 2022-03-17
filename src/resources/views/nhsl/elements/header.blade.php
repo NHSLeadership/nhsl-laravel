@@ -22,10 +22,10 @@
         </div>
     </div>
 
-    @include('nhsl.elements.nav')
+    @include('nhsl::nhsl.elements.nav')
 
-    @if (Config::get('nhsl.alert_banner_on', true))
-        @include('nhsl.elements.banner', [
+    @if (Config::get('nhsl.alert_banner_on', false))
+        @include('nhsl::nhsl.elements.banner', [
             'title' => 'This is a new service',
             'message' => __('messages.banner.message', ['url' => Config::get('app.user_guide_url','#')]),
         ])

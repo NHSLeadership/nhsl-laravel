@@ -20,5 +20,5 @@ Route::get('/{http_code}', function ($http_code) {
 	if (!in_array($http_code, [401, 403, 404, 419, 429, 500, 503])) {
 		return abort(404);
 	}
-	return view('errors.' . $http_code);
+	return view('nhsl::errors.' . $http_code);
 })->name('nhsl.errors');
