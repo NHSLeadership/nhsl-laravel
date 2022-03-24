@@ -4,7 +4,7 @@ namespace Nhsl\NhslLaravel\Tests\Feature;
 
 use Tests\TestCase;
 
-class AccessNhslTest extends TestCase
+class AccessNhslRouteTest extends TestCase
 {
 	/**
 	 * A basic test example.

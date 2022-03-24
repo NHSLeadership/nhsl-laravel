@@ -14,7 +14,7 @@ class NhslLaravelServiceProvider extends ServiceProvider
 	 */
 	public function register()
 	{
-		$this->app->make('Nhsl\NhslLaravel\App\Http\Controllers\NhslLaravelController');
+		//
 	}
 
 	/**
@@ -41,13 +41,6 @@ class NhslLaravelServiceProvider extends ServiceProvider
 		Route::group($routeParams, function () {
 			$this->loadRoutesFrom(__DIR__.'/routes/web.php');
 		});
-
-		/**
-		 * Publish controllers
-		 */
-		$this->publishes([
-			__DIR__.'/app/Http/Controllers' => app_path('Http/Controllers'),
-		]);
 
 		/**
 		 * Publish public assets
