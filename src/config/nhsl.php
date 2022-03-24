@@ -2,11 +2,13 @@
 
 return [
 
-	'prefix' => 'nhsl',
+	'prefix' => env('NHSL_PREFIX', 'nhsl'),
 
 	'middleware' => ['web'],
 
-	'alert_banner_on' => false,
+	'alert_banner_on' => env('ALERT_BANNER_ON', false),
+
+	'register_url' => 'https://profile.leadershipacademy.nhs.uk/register',
 
 	/*
 	|--------------------------------------------------------------------------
