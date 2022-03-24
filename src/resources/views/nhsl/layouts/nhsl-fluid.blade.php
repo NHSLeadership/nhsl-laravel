@@ -7,11 +7,14 @@
 
     @include('nhsl::nhsl.elements.header')
 
-    @if(Config::get('nhsl.alert_banner_on',false) && (Route::is('home') || Route::is('register')))
-        @include('nhsl::nhsl.elements.banner')
+    @if(Config::get('nhsl.alert_banner_on', false) && (!Route::is('dashboard')))
+        @include('nhsl::nhsl.elements.banner', [
+            'title' => 'This is a new service',
+            'message' => __('messages.banner.message', ['url' => Config::get('app.user_guide_url','#')]),
+        ])
     @endif
 
-    <div class="nhsuk-width-container">
+    <div class="nhsuk-width-container-fluid">
         <main class="nhsuk-main-wrapper " id="maincontent" role="main">
             @yield('content')
         </main>
@@ -19,8 +22,7 @@
 
     @include('nhsl::nhsl.elements.footer')
 
-    <script src="{{ asset('js/nhsuk.min.js', !\Illuminate\Support\Facades\App::environment('local')) }}" defer></script>
-    <script src="{{ asset('js/app.min.js', !\Illuminate\Support\Facades\App::environment('local')) }}" defer></script>
+    <script src="{{ asset('js/nhsl.min.js', !\Illuminate\Support\Facades\App::environment('local')) }}" defer></script>
 
     <livewire:scripts />
     <script>

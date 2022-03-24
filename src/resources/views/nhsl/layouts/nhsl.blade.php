@@ -7,8 +7,11 @@
 
     @include('nhsl::nhsl.elements.header')
 
-    @if(Config::get('nhsl.alert_banner_on', true) && (Route::is('home') || Route::is('register') || Route::is('nhsl')))
-        @include('nhsl::nhsl.elements.banner')
+    @if(Config::get('nhsl.alert_banner_on', false) && (!Route::is('dashboard')))
+        @include('nhsl::nhsl.elements.banner', [
+            'title' => 'This is a new service',
+            'message' => __('messages.banner.message', ['url' => Config::get('app.user_guide_url','#')]),
+        ])
     @endif
 
     <div class="nhsuk-width-container">
