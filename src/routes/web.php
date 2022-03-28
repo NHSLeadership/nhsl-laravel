@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/nhsl', function () {
 	return view('nhsl::nhsl.index');
-});
+})->name('nhsl.index');
 
 Route::get('/{http_code}', function ($http_code) {
 	if (!in_array($http_code, [401, 403, 404, 419, 429, 500, 503])) {

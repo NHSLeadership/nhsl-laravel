@@ -6,7 +6,13 @@
     "license": "GPL-2.0+",
     "autoload": {
         "psr-4": {
-            "Nhsl\\NhslLaravel\\": "src/"
+            "Nhsl\\NhslLaravel\\": "src/",
+            "Nhsl\\NhslLaravel\\Test\\": "tests/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nhsl\\NhslLaravel\\Test\\": "tests/"
         }
     },
     "authors": [
@@ -19,13 +25,22 @@
         "laravel": {
             "providers": [
                 "Nhsl\\NhslLaravel\\NhslLaravelServiceProvider"
-            ]
+            ],
+            "branch-alias": {
+                "dev-main": "1.x-dev",
+                "dev-master": "1.x-dev"
+            }
         }
     },
     "minimum-stability": "dev",
     "require": {
         "composer-plugin-api": "^2.2.0",
-        "laravel/framework": ">=7.6"
+        "orchestra/testbench": "^5.0|^6.0|^7.0",
+        "laravel/framework": ">=7.6",
+        "phpunit/phpunit": "^9.4"
+    },
+    "scripts": {
+        "test": "phpunit"
     },
     "support": {
         "source": "https://github.com/NHSLeadership/nhsl-laravel",
