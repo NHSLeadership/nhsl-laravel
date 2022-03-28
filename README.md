@@ -91,4 +91,14 @@ And that's really it! Enjoy...
     php artisan vendor:publish --tag=nhsl-translations --force
     ```
       
+## Testing
+If you want to run tests alongside your other Laravel tests, you need to add the following to your `phpunit.xml` config:
+```
+<testsuites>
+    <testsuite name="Nhsl Laravel Test Suite">
+        <directory suffix="Test.php">./vendor/nhsleadership/nhsl-laravel/tests</directory>
+    </testsuite>
+</testsuites>
+```
+
 
