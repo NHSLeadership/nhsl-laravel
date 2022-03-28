@@ -58,16 +58,24 @@ And that's really it! Enjoy...
 
 #### Re-publishing individual starter kit files locally
    
-1. Re-publishing latest nhsl-public content with override (mvp assets)
+1. Re-publishing nhsl-assets public content (required)
     ```
-    php artisan vendor:publish --tag=nhsl-public --force
+    php artisan vendor:publish --tag=nhsl-assets
+    ```
+    or ... 
+    ```
+    php artisan vendor:publish --tag=nhsl-assets --force
     ```
    
-1. Re-publishing latest nhsl-views content with override (optional)
+1. Re-publishing latest nhsl-views content (optional)
     ```
-    php artisan vendor:publish --tag=nhsl-views --force
+    php artisan vendor:publish --tag=nhsl-views
     ```
-
+   or ... 
+   ```
+   php artisan vendor:publish --tag=nhsl-views --force
+   ```
+   
 1. Re-publishing latest nhsl-config with override (optional)
     ```
     php artisan vendor:publish --tag=nhsl-config --force

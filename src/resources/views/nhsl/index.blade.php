@@ -1,6 +1,6 @@
 @extends('nhsl::nhsl.layouts.nhsl')
 
-@section('title', $title ?? '')
+@section('title', $title ?? config('app.name'))
 
 @section('content')
 

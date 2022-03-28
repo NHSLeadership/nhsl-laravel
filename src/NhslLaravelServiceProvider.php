@@ -47,7 +47,7 @@ class NhslLaravelServiceProvider extends ServiceProvider
 		 */
 		$this->publishes([
 			__DIR__.'/public' => public_path('/')
-		], 'nhsl-public');
+		], 'nhsl-assets');
 
 		/**
 		 * Load and publish sass
