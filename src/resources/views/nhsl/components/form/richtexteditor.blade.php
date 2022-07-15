@@ -2,24 +2,21 @@
 
 Notes:
 
-1. Before this component can be used, Quill will need to be installed with Alpine
- as described at https://quilljs.com/guides/adding-quill-to-your-build-pipeline/.
-
-2. Make sure the "name" parameter matches the field to be edited, e.g:
+1. Make sure the "name" parameter matches the field to be edited, e.g:
     @component('nhsl.components.form.richtexteditor', ['name' => 'programme_title'])
 
-3. Make sure the "value" slot contains the model->field to be edited, e.g:
+2. Make sure the "value" slot contains the model->field to be edited, e.g:
     @slot('value')
         {!! $template->programme_title !!}
     @endslot
 
-4. Add an array of listeners to the controller with a listener with
+3. Add an array of listeners to the controller with a listener with
 exactly the same name as (1) with "_updated" appended, e.g:
     protected $listeners = [
         'programme_title_updated' => 'updateTitle',
     ];
 
-5. Add a function to the controller that is called by the listener, e.g:
+4. Add a function to the controller that is called by the listener, e.g:
     public function updateTitle($title)
     {
         $this->template->programme_title = urldecode($title);
