@@ -51,7 +51,7 @@ exactly the same name as (1) with "_updated" appended, e.g:
                     livewire.emit('{{ $name }}_updated', encodeURIComponent(quill_{{ $name }}.root.innerHTML));
                 });
             "
-            wire:model.debounce.2000ms="template.{{ $name }}"
+            wire:model.debounce.2000ms="{{ $name }}"
         >
         {!! $value !!}
     </div>
