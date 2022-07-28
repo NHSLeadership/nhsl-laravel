@@ -44,8 +44,7 @@ exactly the same name as (3) with "_updated" appended, e.g:
         </div>
     @endif
 
-    <div name="{{ $name }}" id="{{ $name }}" style="border:none;padding:0;"
-        class="nhsuk-header--white nhsuk-textarea {{ $errors->has($name) ? ' nhsuk-textarea--error' : '' }}"
+    <div name="{{ $name }}" id="{{ $name }}" style="border: 2px solid #4c6272; padding:0; background-color:white;"
         wire:ignore>
         <div x-data x-ref="quillEditor" x-init="quill_{{ $name }} = new Quill($refs.quillEditor, {
             theme: 'snow',
