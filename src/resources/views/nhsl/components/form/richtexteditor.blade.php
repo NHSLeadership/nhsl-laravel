@@ -28,9 +28,7 @@ exactly the same name as (3) with "_updated" appended, e.g:
         $this->template->programme_title = urldecode($title);
     }
 
-7. Image/video uploads have been blocked to prevent cross-site-scripting attacks.
-
---}}
+7. Image/video uploads have been blocked to prevent cross-site-scripting attacks. --}}
 
 <div class="nhsuk-form-group {{ $errors->has($name) ? ' nhsuk-form-group--error' : '' }}">
 
@@ -49,32 +47,26 @@ exactly the same name as (3) with "_updated" appended, e.g:
     <div name="{{ $name }}" id="{{ $name }}" style="border:none;padding:0;"
         class="nhsuk-header--white nhsuk-textarea {{ $errors->has($name) ? ' nhsuk-textarea--error' : '' }}"
         wire:ignore>
-        <script>
-            var formats = [
+        <div x-data x-ref="quillEditor" x-init="quill_{{ $name }} = new Quill($refs.quillEditor, {
+            theme: 'snow',
+            formats: [
                 'background',
                 'bold',
                 'color',
                 'font',
-                'code',
                 'italic',
                 'link',
                 'size',
                 'strike',
-                'script',
                 'underline',
                 'blockquote',
                 'header',
                 'indent',
                 'list',
                 'align',
-                'direction',
-                'code-block',
-                'formula',
-                // 'image',
-                // 'video'
-            ];
-        </script>
-        <div x-data x-ref="quillEditor" x-init="quill_{{ $name }} = new Quill($refs.quillEditor, { theme: 'snow', formats: formats });
+                'direction'
+            ]
+        });
         quill_{{ $name }}.on('text-change', function() {
             livewire.emit('{{ $name }}_updated', encodeURIComponent(quill_{{ $name }}.root.innerHTML));
         });"
