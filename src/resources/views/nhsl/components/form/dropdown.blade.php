@@ -17,7 +17,11 @@
         @if (isset($tabindex))
             tabindex="{{ $tabindex }}"
         @endif
+        @if (isset($onchange))
+            onchange="{{ $onchange }}"
+        @endif
         class="nhsuk-select">
+
         <option value="">{{ $placeholder ?? '-- Please select --' }}</option>
         @if (isset($dropdown_list) && is_array($dropdown_list))
 
@@ -26,7 +30,7 @@
             @endif
 
             @foreach ($dropdown_list as $param_value => $param_name)
-                <?php $selected = null ?>
+                <?php $selected = (isset($$name) && $param_value==$$name ? 'selected' : '') ?>
                 <option value="{{ $param_value }}" {{ $selected }}>{{ $param_name }}</option>
             @endforeach
 
