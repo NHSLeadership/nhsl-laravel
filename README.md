@@ -1,10 +1,10 @@
 # NHS Laravel Starter Kit
-### v1.0.0 
+### v1.1.0 
 
 NHS Laravel Starter Kit integrates NHSUK frontend framework with Laravel package and extends the available component library, making it ready to be used with Blade and Livewire templates.  
 
 ## Installation
-There is no officially published version of NHS Laravel Kit for v1.0.0 RC, so you will not be able to use composer discovery yet.
+There is no officially published version of NHS Laravel Kit for v1.1.0, so you will not be able to use composer discovery yet.
 In order to install and use NHS Laravel Starter Kit please add the following git path to your project composer file.
 ```
 "repositories": [
