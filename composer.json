@@ -2,7 +2,7 @@
     "name": "nhsleadership/nhsl-laravel",
     "description": "NHSL theme for Laravel based upon NHSUK frontend framework",
     "homepage": "https://github.com/NHSLeadership/nhsl-laravel",
-    "version": "dev-main",
+    "version": "1.1.0",
     "license": "GPL-2.0+",
     "autoload": {
         "psr-4": {
