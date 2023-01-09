@@ -14,3 +14,4 @@ const mix = require('laravel-mix');
 mix.sass('src/resources/sass/nhsl.scss', 'src/public/css/nhsl.min.css')
     .js('src/resources/js/nhsl.js', 'src/public/js/nhsl.min.js')
     .js('node_modules/nhsuk-frontend/dist/nhsuk.min.js', 'src/public/js/nhsuk.min.js');
+mix.copyDirectory('vendor/tinymce/tinymce', 'public/js/tinymce');
