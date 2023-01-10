@@ -1,5 +1,5 @@
 # NHS Laravel Starter Kit
-### v1.1.0 
+### v1.2.0 
 
 NHS Laravel Starter Kit integrates NHSUK frontend framework with Laravel package and extends the available component library, making it ready to be used with Blade and Livewire templates.  
 
