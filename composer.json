@@ -37,7 +37,8 @@
         "composer-plugin-api": "^2.2.0",
         "orchestra/testbench": "^5.0|^6.0|^7.0",
         "laravel/framework": ">=7.6",
-        "phpunit/phpunit": "^9.4"
+        "phpunit/phpunit": "^9.4",
+        "tinymce/tinymce": "^6.2"
     },
     "scripts": {
         "test": "phpunit"
