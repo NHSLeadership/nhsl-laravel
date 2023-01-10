@@ -52,7 +52,7 @@ exactly the same name as (3) with "_updated" appended, e.g:
                 menubar: false,
                 inline: true,
                 min_height: 200,
-                content_style: '.nhsuk-input-focus { border: 4px solid black !important; box-shadow: 0 0 0 4px black !important; } .nhsuk-tinymce { background-color: #ffffff; }',
+                content_style: '.nhsuk-input-focus { border: 4px solid black; box-shadow: 0 0 0 4px black; } .nhsuk-tinymce { background-color: #ffffff; }',
                 setup: function(editor) {
                     editor.on('change', function(e) {
                         Livewire.emit(e.target.id + '_updated', encodeURIComponent(tinymce.activeEditor
