@@ -9,7 +9,7 @@ Notes:
  as described at https://laravel-livewire.com/docs/2.x/data-binding#nested-binding.
 
 3. Make sure the "name" parameter matches the field to be edited, e.g:
-    @component('nhsl.components.form.richtexteditor', ['name' => 'programme_title'])
+    @component('nhsl::nhsl.components.form.richtexteditor', ['name' => 'programme_title'])
 
 4. Make sure the "value" slot contains the model->field to be edited, e.g:
     @slot('value')

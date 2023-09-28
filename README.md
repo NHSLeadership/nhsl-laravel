@@ -19,16 +19,16 @@ And then install normally with
 composer require nhsleadership/nhsl-laravel
 ```
 
-> DEV NOTE: For the extensive NHS Laravel Kit development, you will need fork and pull down the repository locally: 
+> DEV NOTE: For the extensive NHS Laravel Kit development, you will need fork and pull down the repository locally  into your `/packages` directory: 
 > ```
-> git clone https://github.com/NHSLeadership/nhsl-laravel.git ../nhsl-laravel
+> git clone https://github.com/NHSLeadership/nhsl-laravel.git ./packages/nhsleadership/nhsl-laravel
 > ```
 > ... and alias the local path in your Laravel project composer:
 > ```
 > "repositories": [
 >     {
 >         "type": "path",
->         "url": "../nhsl-laravel"
+>         "url": "packages/nhsleaderhip/nhsl-laravel"
 >     }
 > ],
 > "config": {
