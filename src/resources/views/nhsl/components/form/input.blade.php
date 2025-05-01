@@ -5,6 +5,16 @@
         </label>
     @endif
 
+    @if (isset($hint))
+        <div class="nhsuk-hint" id="{{ $name }}-hint">{!! $hint !!}</div>
+    @endif
+
+    @if (isset($hints) && $hints->has($name))
+        <div class="nhsuk-hint" id="{{ $name }}-hint">
+            {!! $hints->first($name) !!}
+        </div>
+    @endif
+
     <input  name="{{ $name }}"
             id="{{ $name }}"
             class="nhsuk-input {{ $errors->has($name) ? ' nhsuk-input--error' : '' }}"
@@ -16,22 +26,12 @@
             @endif
             @if(isset($wire))
                 @foreach($wire as $wire_type => $wire_name)
-                wire:{{ $wire_type }}="{{ $wire_name }}"
-                @endforeach
+                    wire:{{ $wire_type }}="{{ $wire_name }}"
+            @endforeach
             @else
-                wire:model="{{ $name }}"
+                wire:model.live="{{ $name }}"
             @endif
             value="{{ $value ?? old($name) }}"><br/>
-
-    @if (isset($hint))
-        <span>{!! $hint !!}</span>
-    @endif
-
-    @if (isset($hints) && $hints->has($name))
-        <div class="nhsuk-hint" id="{{ $name }}-error-hint">
-            {!! $hints->first($name) !!}
-        </div>
-    @endif
 
     @if ($errors->has($name))
         <span class="nhsuk-error-message" id="{{ $name }}-error-error">

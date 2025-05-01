@@ -1,10 +1,10 @@
 <div class="nhsuk-form-group {{ $errors->has($name) ? ' nhsuk-form-group--error' : '' }}">
 
-    @if (isset($options_list) && isset($label))
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-fieldset__heading">
-                {{ $label }}
-            </h1>
+    @if (isset($heading) || (isset($options_list) && isset($label)))
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+            <p class="nhsuk-fieldset__heading">
+                {{ $heading ?? $label }}
+            </p>
         </legend>
     @endif
 
@@ -15,29 +15,37 @@
     @endif
 
     <div class="nhsuk-checkboxes">
-        @php $options_list = isset($options_list) ? $options_list :[ 1 => $name ] @endphp
+        @php $options_list = isset($options_list) ? $options_list : [ 1 => $name ] @endphp
         @if (is_array($options_list) && !empty($sort))
             <?php asort($options_list);?>
         @endif
-        @foreach ($options_list as $param_id => $param_name)
+        @foreach ($options_list as $param_value => $param_name)
             <div class="nhsuk-checkboxes__item">
-                <input name="{{ $name }}[{{ $param_id }}]" id="{{ $name }}-{{ $param_id }}"
-                @if(isset($wire))
-                    @foreach($wire as $wire_type => $wire_name)
-                    wire:{{ $wire_type }}="{{ $wire_name }}"
-                    @endforeach
+                <?php $checked = ($param_value == old($name)) ? "checked" : ''?>
+                @if (count($options_list)>1)
+                    <input name="{{ $name }}[{{ $param_value }}]"
                 @else
-                    wire:model="{{ $name }}.{{ $param_id }}"
-                @endif
-                @if (isset($tabindex) && $param_id === array_key_first($options_list))
-                    tabindex="{{ $tabindex }}"
-                @endif
-                value="{{ $param_id }}"
-                class="nhsuk-checkboxes__input"
-                type="checkbox">
-                <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ $name }}-{{ $param_id }}">
-                    <span>{{ count($options_list)>1 ? $param_name : $label }}</span>
-                </label>
+                    <input name="{{ $name }}" id="{{ $name }}"
+                           @endif
+
+                           @if(isset($wire))
+                               @foreach($wire as $wire_type => $wire_name)
+                                   wire:{{ $wire_type }}="{{ $wire_name }}"
+                           @endforeach
+                           @else
+                               wire:model.live="{{ $name }}"
+                           @endif
+
+                           @if (isset($tabindex) && $param_value === array_key_first($options_list))
+                               tabindex="{{ $tabindex }}"
+                           @endif
+                           value="{{$param_value}}"
+                           class="nhsuk-checkboxes__input"
+                           type="checkbox" {{$checked ?? null}}
+                    >
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="{{$name}}">
+                        <span>{{ count($options_list)>1 ? $param_name : $label }}</span>
+                    </label>
             </div>
         @endforeach
 
