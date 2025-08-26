@@ -9,7 +9,9 @@
     @endif
 
     @if (isset($hint))
-        <span>{{ $hint }}</span>
+        <div class="nhsuk-hint" id="{{ $name }}-hint">
+            {{ $hint }}
+        </div>
     @endif
 
     @if (isset($hints) && $hints->has($name))
@@ -19,7 +21,7 @@
     @endif
 
     @if ($errors->has($name))
-        <span class="nhsuk-error-message" id="{{ $name }}-error-error">
+        <span class="nhsuk-error-message" id="{{ $name }}-error">
           <span class="nhsuk-u-visually-hidden">Error:</span>{{ $errors->first($name) }}
         </span>
     @endif

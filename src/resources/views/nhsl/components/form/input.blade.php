@@ -6,7 +6,9 @@
     @endif
 
     @if (isset($hint))
-        <span>{!! $hint !!}</span>
+        <div class="nhsuk-hint" id="{{ $name }}-hint">
+            {!! $hint !!}
+        </div>
     @endif
 
     @if (isset($hints) && $hints->has($name))
