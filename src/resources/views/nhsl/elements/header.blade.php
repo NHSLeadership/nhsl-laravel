@@ -16,7 +16,7 @@
             </div>
             @if (Auth::user() ?? false)
                 <div class="nhsuk-header__panel">
-                    <p class="nhsuk-tag--transparent">Logged in as: {{ Auth::user()->user_id }}</p>
+                    <p class="nhsuk-tag--transparent">Logged in as: {{ Auth::user()->user_id ?? 'anonymous' }}</p>
                 </div>
             @endif
         </div>

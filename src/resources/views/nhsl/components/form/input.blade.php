@@ -6,13 +6,19 @@
     @endif
 
     @if (isset($hint))
-        <div class="nhsuk-hint" id="{{ $name }}-hint">{!! $hint !!}</div>
+        <span>{!! $hint !!}</span>
     @endif
 
     @if (isset($hints) && $hints->has($name))
-        <div class="nhsuk-hint" id="{{ $name }}-hint">
+        <div class="nhsuk-hint" id="{{ $name }}-error-hint">
             {!! $hints->first($name) !!}
         </div>
+    @endif
+
+    @if ($errors->has($name))
+        <span class="nhsuk-error-message" id="{{ $name }}-error">
+            <span class="nhsuk-u-visually-hidden">Error:</span>{!! $errors->first($name) !!}
+        </span>
     @endif
 
     <input  name="{{ $name }}"
@@ -26,16 +32,11 @@
             @endif
             @if(isset($wire))
                 @foreach($wire as $wire_type => $wire_name)
-                    wire:{{ $wire_type }}="{{ $wire_name }}"
-            @endforeach
+                wire:{{ $wire_type }}="{{ $wire_name }}"
+                @endforeach
             @else
                 wire:model.live="{{ $name }}"
             @endif
             value="{{ $value ?? old($name) }}"><br/>
 
-    @if ($errors->has($name))
-        <span class="nhsuk-error-message" id="{{ $name }}-error-error">
-          <span class="nhsuk-u-visually-hidden">Error:</span>{!! $errors->first($name) !!}
-        </span>
-    @endif
 </div>
