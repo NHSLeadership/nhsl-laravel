@@ -1,8 +1,16 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/National_Health_Service_%28England%29_logo.svg" width="200"></a>
 <br><span style="color:#fff;font-size:20px">Leadership Academy</span></p>
 
-## NHSL Laravel v1.2.0
-* Updated 10.01.2023
+## NHSL Laravel components
+### version v1.2.1
+
+---
+### v1.2.1
+> Last Updated: 28.08.2025
+1. Removed some requirements eg: Laravel framework (does not need installing)
+2. Updated components
+3. Added new date-input component
+4. Security patches
 
 ---
 ### v1.2.0
