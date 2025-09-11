@@ -9,7 +9,8 @@
 > Last Updated: 28.08.2025
 1. Removed some requirements eg: Laravel framework (does not need installing)
 2. Updated components
-3. Security patches
+3. Added new date-input component
+4. Security patches
 
 ---
 ### v1.2.0
