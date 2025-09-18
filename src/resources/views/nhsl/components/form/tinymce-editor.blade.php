@@ -2,10 +2,10 @@
 
 Notes:
 
-1. This component consists of the Tinymce editor with Laravel and composer 
+1. This component consists of the Tinymce editor with Laravel and composer
  as described at https://www.tiny.cloud/docs/integrations/laravel/laravel-composer-install/.
 
-2. Need to execute 'composer install' followed by 'npx mix' to copy the necessary files to the public folder. 
+2. Need to execute 'composer install' followed by 'npx mix' to copy the necessary files to the public folder.
 
 3. Please note that it currently does not support nested data binding using dot notation
  as described at https://laravel-livewire.com/docs/2.x/data-binding#nested-binding.
@@ -96,7 +96,7 @@ exactly the same name as (3) with "_updated" appended, e.g:
         @endif
 
         @if ($errors->has($name))
-            <span class="nhsuk-error-message" id="{{ $name }}-error-error">
+            <span class="nhsuk-error-message" id="{{ $name }}-error">
                 <span class="nhsuk-u-visually-hidden">Error:</span>{{ $errors->first($name) }}
             </span>
         @endif

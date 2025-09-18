@@ -73,6 +73,12 @@ exactly the same name as (3) with "_updated" appended, e.g:
             {!! $value !!}
         </div>
 
+        @if (isset($hint))
+            <div class="nhsuk-hint" id="{{ $name }}-hint">
+                {!! $hint !!}
+            </div>
+        @endif
+
         @if (isset($hints) && $hints->has($name))
             <div class="nhsuk-hint" id="{{ $name }}-error-hint">
                 {{ $hints->first($name) }}
@@ -80,7 +86,7 @@ exactly the same name as (3) with "_updated" appended, e.g:
         @endif
 
         @if ($errors->has($name))
-            <span class="nhsuk-error-message" id="{{ $name }}-error-error">
+            <span class="nhsuk-error-message" id="{{ $name }}-error">
                 <span class="nhsuk-u-visually-hidden">Error:</span>{{ $errors->first($name) }}
             </span>
         @endif
