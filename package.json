@@ -14,7 +14,7 @@
         "nhsuk-frontend": "^9.3.0",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.80.0",
-        "sass-loader": "^11.0.0",
+        "sass-loader": "^11.1.1",
         "webpack": "^5.105.0"
     }
 }
